@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="344dp"
         android:text="Lets Clock in for the First Time. "
+        android:id="@+id/info"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
