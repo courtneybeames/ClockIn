@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.facebook.CallbackManager;
@@ -29,13 +30,7 @@ public class FacebookLoginActivity extends AppCompatActivity {
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                info.setText(
-                        "User ID: "
-                                + loginResult.getAccessToken().getUserId()
-                                + "\n" +
-                                "Auth Token: "
-                                + loginResult.getAccessToken().getToken()
-                );
+                goToHomepage();
             }
 
             @Override
@@ -49,6 +44,13 @@ public class FacebookLoginActivity extends AppCompatActivity {
             }
         });
     }
+
+
+    public void goToHomepage() {
+        Intent intent = new Intent(this, HomepageActivity.class);
+        startActivity(intent);
+    }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
